@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<title>picker</title>
+	    <link href="css/common.css" rel="stylesheet" type="text/css">
+	    <link href="css/cityPicker.css" rel="stylesheet" type="text/css">
+	    <script src="js/jquery.js"></script>
+	    <style type="text/css">
+	    	.pick-btn{margin: 100px auto;display: block;width: 200px; height: 40px; line-height: 40px;border: 1px solid #ddd; color: #666; text-align: center;}
+	    </style>
+	</head>
+	<body>
+		<a href="javascript:;" class="pick-btn">选择区域</a>
+	</body>
+	<script src="js/cityPicker.js"></script>
+	<script type="text/javascript">
+		$(".pick-btn").cityPicker({
+			prov:"北京市",
+			city:"北京市",
+			dist:"西城区",
+			confirm:function(data){
+				$(".pick-btn").text(data.prov+data.city+data.dist);
+			}
+		});
+	</script>
+</html>
