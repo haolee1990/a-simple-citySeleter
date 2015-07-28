@@ -408,7 +408,7 @@
 		var opt=$.extend({},defaults,options);
 		this.each(function(){
 			var citypicker=new CityPicker($(this),opt);
-			$.getJSON('../plugin/cityPicker/city.data.min.js',function(data){
+			$.getJSON('js/city.data.min.js',function(data){
 			    citypicker.init(data.data);
 			});	
 		});
