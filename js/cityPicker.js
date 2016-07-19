@@ -138,14 +138,16 @@
 		});
 	}//init end
 	function getComputeTranslateY(obj){
-		var ret=0,
-			style=obj.attr('style')||'';
+		var ret=0,style=obj.attr('style')||'';
 		style=style.toLowerCase();
-		if(style.indexOf('translate3d') != -1){
-			ret=Number(style.split('translate3d(0px,')[1].split('px')[0]);
+		try{
+			if(style.indexOf('translate') != -1){
+				ret=Number(style.split('translate(0px,')[1].split('px')[0]);
+			}
+			return ret;
+		}catch(e){
+			return Number(style.split('translate(0,')[1].split('px')[0]);
 		}
-		
-		return ret;
 	}
 	
 	function lockScreen(){
