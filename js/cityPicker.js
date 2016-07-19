@@ -142,11 +142,11 @@
 		style=style.toLowerCase();
 		try{
 			if(style.indexOf('translate') != -1){
-				ret=Number(style.split('translate(0px,')[1].split('px')[0]);
+				ret=Number(style.split('translate3d(0px,')[1].split('px')[0]);
 			}
 			return ret;
 		}catch(e){
-			return Number(style.split('translate(0,')[1].split('px')[0]);
+			return Number(style.split('translate3d(0,')[1].split('px')[0]);
 		}
 	}
 	
